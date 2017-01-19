@@ -10,7 +10,8 @@ var EventSchema = new Schema({
   }],
   images:[{
     image:{type:String, default:""},
-  }]
+  }],
+  priority:Number
 });
 //
 // EventSchema.plugin(mongoosastic,{
