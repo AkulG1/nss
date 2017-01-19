@@ -2,6 +2,7 @@ var router = require('express').Router();
 var User = require('../models/user');
 var Config = require('../config/secret');
 var Events = require('../models/event');
+var RecentNews = require('../models/recentNews');
 var Gallery = require('../models/gallery');
 //var Cart = require('../models/cart');
 var stripe = require('stripe')('sk_test_JvxDXJ0cUTuzyqL2jonZ5xNK');
@@ -120,7 +121,13 @@ router.get('/',function(req,res,next){
   // }else{
   //   res.render('main/home');
   // }
-  res.render('main/home');
+  RecentNews.find({}, function(err, recentNews) {
+    if (err) return next(err);
+    res.render('main/home', {
+      recentNews : recentNews
+    });
+  });
+  //res.render('main/home');
 });
 
 // router.get('/page/:page',function(req,res,next){

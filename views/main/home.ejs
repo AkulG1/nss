@@ -14,63 +14,84 @@
     </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col l9 m12 s12">
 
-<!--Intro and service-->
-<div id="intro" class="section scrollspy">
-    <div class="container">
+      <!--Intro and service-->
+      <div id="intro" class="section scrollspy">
+          <div class="container">
 
-        <div class="row card-panel">
-            <div  class="col s12">
-                <h3 class="center header text_h2"><span class="span_h2"> National Service Scheme </span>(NSS)</h3>
-            </div>
+              <div class="row card-panel">
+                  <div  class="col s12">
+                      <h3 class="center header text_h2"><span class="span_h2"> National Service Scheme </span>(NSS)</h3>
+                  </div>
 
-            <div class="col s12 center">
-                <p class="left-align light">
-                National Service Scheme (NSS), under the Ministry of Youth Affairs & Sports Govt. of India, popularly known as NSS was launched in Gandhiji's Birth Centenary Year 1969, in 37 Universities involving 40,000 students with primary focus on the development of personality of students through community service. Today, NSS has more than 3.2 million student volunteers on its roll spread over 298 Universities and 42 (+2) Senior Secondary Councils and Directorate of Vocational Education all over the country. From its inception, more than 3.75 crores students from Universities, Colleges and Institutions of higher learning have benefited from the NSS activities, as student volunteers.</p>
-            </div>
+                  <div class="col s12 center">
+                      <p class="left-align light">
+                      National Service Scheme (NSS), under the Ministry of Youth Affairs & Sports Govt. of India, popularly known as NSS was launched in Gandhiji's Birth Centenary Year 1969, in 37 Universities involving 40,000 students with primary focus on the development of personality of students through community service. Today, NSS has more than 3.2 million student volunteers on its roll spread over 298 Universities and 42 (+2) Senior Secondary Councils and Directorate of Vocational Education all over the country. From its inception, more than 3.75 crores students from Universities, Colleges and Institutions of higher learning have benefited from the NSS activities, as student volunteers.</p>
+                  </div>
 
-            <div class="col s12 center">
-              <a class="waves-effect waves-light btn center" href="">Visit Website</a>
-            </div>
-        </div>
+                  <div class="col s12 center">
+                    <a class="waves-effect waves-light btn center" href="">Visit Website</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!--Intro and service-->
+      <div id="intro" class="section scrollspy">
+          <div class="container">
+              <div class="row card-panel">
+                  <div  class="col s12">
+                      <h3 class="center header text_h2"><span class="span_h2"> Delhi Technological University </span>(DTU)</h3>
+                  </div>
+
+                  <div class="col s12 center">
+                      <p class="left-align light">
+                      Boasting of a legacy of "75 years of tradition of excellence in Engineering & Technology Education, Research and Innovations" Delhi College of Engineering, (initially established with the name – Delhi Polytechnic) came into existence in the year 1941 to cater to the needs of Indian industries for trained technical manpower with practical experience and sound theoretical knowledge.
+
+                      Delhi College of Engineering has been the mother institution of a number of national projects including IITD, SPA, College of Arts and even the famous FMS. Initially affiliated to the University of Delhi, from July 2009, the DCE has become Delhi Technological University vide Delhi act 6 of 2009. As Delhi Technological University, it has the desired autonomy to excel and shape itself as a world class Technological University.</p>
+                  </div>
+                  <div class="col s12 center">
+                    <a class="waves-effect waves-light btn center" href="">Visit Website</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!--Intro and service-->
+      <div id="intro" class="section scrollspy">
+          <div class="container">
+              <div class="row card-panel">
+                  <div  class="col s12">
+                      <h3 class="center header text_h2"><span class="span_h2"> NSS DTU Chapter</span></h3>
+                  </div>
+
+                  <div class="col s12 center">
+                      <p class="left-align light">The NSS-DTU chapter was inaugurated on 13th February 2013 to establish a meaningful linkage between the campus and the community. Therefore, for the national reconstruction and resurgence it was deemed fit that the students and teachers should be properly sensitized and utilized for strengthening the Indian society as a whole with particular emphasis on rural community. The overall aim of NSS-DTU as envisaged earlier, is to give an extended dimension to the higher education system and orient the students towards community service while they are studying in the institution. The reason for the formulation of this is the general realization that the college students have a tendency to get alienated from the village/slum masses which constitute the majority of the population of the country. It is felt that their interaction with the common villagers and slum dwellers will expose the students to the harsh realities of poverty-stricken life and bring about a change in their social perception. Therefore, we feel that students, teachers and the community are the three fundamental pillars of NSS-DTU.</p>
+                  </div>
+                  <div class="col s12 center">
+                    <a class="waves-effect waves-light btn center" href="/about">Read More</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
     </div>
+    <div class="col l3 m12 s12">
+      <div id="eventContainer" class="section scrollspy card-panel">
+          <div class="container">
+              <h3 class="center header text_h2"><span class="span_h2"> Recent News</span></h3>
+              <div class="row recent">
+                <ul class="collection">
+                  <% for (var i = 0;i< recentNews.length;i++) { %>
+                  <li class="collection-item"><%= recentNews[i].content %></li>
+                  <% } %>
+                </ul>
+              </div>
+          </div>
+    </div>
+  </div>
 </div>
-
-<!--Intro and service-->
-<div id="intro" class="section scrollspy">
-    <div class="container">
-        <div class="row card-panel">
-            <div  class="col s12">
-                <h3 class="center header text_h2"><span class="span_h2"> Delhi Technological University </span>(DTU)</h3>
-            </div>
-
-            <div class="col s12 center">
-                <p class="left-align light">
-                Boasting of a legacy of "75 years of tradition of excellence in Engineering & Technology Education, Research and Innovations" Delhi College of Engineering, (initially established with the name – Delhi Polytechnic) came into existence in the year 1941 to cater to the needs of Indian industries for trained technical manpower with practical experience and sound theoretical knowledge.
-
-                Delhi College of Engineering has been the mother institution of a number of national projects including IITD, SPA, College of Arts and even the famous FMS. Initially affiliated to the University of Delhi, from July 2009, the DCE has become Delhi Technological University vide Delhi act 6 of 2009. As Delhi Technological University, it has the desired autonomy to excel and shape itself as a world class Technological University.</p>
-            </div>
-            <div class="col s12 center">
-              <a class="waves-effect waves-light btn center" href="">Visit Website</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Intro and service-->
-<div id="intro" class="section scrollspy">
-    <div class="container">
-        <div class="row card-panel">
-            <div  class="col s12">
-                <h3 class="center header text_h2"><span class="span_h2"> NSS DTU Chapter</span></h3>
-            </div>
-
-            <div class="col s12 center">
-                <p class="left-align light">The NSS-DTU chapter was inaugurated on 13th February 2013 to establish a meaningful linkage between the campus and the community. Therefore, for the national reconstruction and resurgence it was deemed fit that the students and teachers should be properly sensitized and utilized for strengthening the Indian society as a whole with particular emphasis on rural community. The overall aim of NSS-DTU as envisaged earlier, is to give an extended dimension to the higher education system and orient the students towards community service while they are studying in the institution. The reason for the formulation of this is the general realization that the college students have a tendency to get alienated from the village/slum masses which constitute the majority of the population of the country. It is felt that their interaction with the common villagers and slum dwellers will expose the students to the harsh realities of poverty-stricken life and bring about a change in their social perception. Therefore, we feel that students, teachers and the community are the three fundamental pillars of NSS-DTU.</p>
-            </div>
-            <div class="col s12 center">
-              <a class="waves-effect waves-light btn center" href="/about">Read More</a>
-            </div>
-        </div>
-    </div>
 </div>

@@ -45,6 +45,26 @@
     <!--  Scripts-->
     <script src="/min/plugin-min.js"></script>
     <script src="/min/custom-min.js"></script>
+    <script type="text/javascript" src="/min/jquery.easy-ticker.js"></script>
+    <script id="dsq-count-scr" src="//nss-dtu.disqus.com/count.js" async></script>
 
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('.recent').easyTicker({
+    direction: 'up', // up or down
+    easing: 'swing', // easing function
+    speed: 'slow', // the speed of transition
+    interval: 2000, // the time for the next transition to take place.
+    height: 'auto', // the height of the elements
+    visible: 0, // the number of visible elements of the list
+    mousePause: 1, // pause on mouse hover
+    controls:{ // assign the elements which control the transition.
+    up: '',
+    down: '',
+    toggle: ''
+    }
+    });
+    });
+    </script>
     </body>
 </html>
