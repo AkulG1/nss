@@ -1,0 +1,83 @@
+<% layout('layout') -%>
+
+<div id="intro" class="section scrollspy">
+    <div class="container">
+      <div class="card-panel row">
+          <form class="col s12" method="post">
+            <div class="row">
+              <div  class="col s12">
+                  <h2 class="center header text_h2"><span class="span_h2"> Volunteer Sign up</span></h2>
+              </div>
+              <% if(errors.length > 0) { %>
+
+                <div class="card-panel col s12">
+                  <p><span class="red-text text-darken-2"> <%= errors %></span><p>
+                </div>
+
+              <% } %>
+            </div>
+            <div class="row">
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Enter your name here" id="name" name="name" type="text" class="validate">
+                <label for="name">Name (Required)</label>
+              </div>
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Enter your username" id="username" name="username" type="text" class="validate">
+                <label for="username">Username (Required)</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Enter your email" id="email" name="email" type="email" class="validate">
+                <label for="email">Email (Required)</label>
+              </div>
+              <div class="input-field col l6 m12 s12">
+                <!-- <input placeholder="Select Year" id="year" type="text" class="validate">
+                <label for="year">Year</label> -->
+                <select id="year" name="year">
+                  <option value="First">First</option>
+                  <option value="Second">Second</option>
+                  <option value="Third">Third</option>
+                  <option value="Fourth">Fourth</option>
+                </select>
+                <label>Year</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Enter your university roll no" id="rollno" name="rollno" type="text" class="validate">
+                <label for="rollno">Roll No</label>
+              </div>
+              <div class="input-field col l6 m12 s12">
+                <!-- <input placeholder="Enter your username" id="username" type="text" class="validate">
+                <label for="username">Username</label> -->
+                <select id="scholar" name="scholar">
+                  <option value="Hosteller">Hosteller</option>
+                  <option value="Day Scholar">Day Scholar</option>
+                </select>
+                <label for="Scholar">Hosteller / Day Scholar</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Enter password to set" id="password" name="password" type="password" class="validate">
+                <label for="password">Password (Required)</label>
+              </div>
+              <div class="input-field col l6 m12 s12">
+                <input placeholder="Re-enter your password" id="passwordrepeat" name="passwordrepeat" type="password" class="validate">
+                <label for="passwordrepeat">Confirm Password (Required)</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col l12 m12 s12 center">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Sign up
+                  <i class="mdl-material-icons fa fa-send right"></i>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+    </div>
+</div>
