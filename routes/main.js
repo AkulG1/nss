@@ -201,7 +201,7 @@ router.post('/contact', function(req, res, next) {
   str+="<br>Message : " + req.body.message;
 
   from_email = new helper.Email(req.body.email);
-  to_email = new helper.Email("dev.lovepreetsingh@gmail.com");
+  to_email = new helper.Email("nssdtu.web@gmail.com");
   subject = "Message from Contact Page";
   content = new helper.Content("text/html", str);
   mail = new helper.Mail(from_email, subject, to_email, content);

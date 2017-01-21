@@ -4,13 +4,12 @@ var crypto = require('crypto'); // no need to install this library it is built-i
 var Schema = mongoose.Schema;
 // The user schema attributes / characteristics / fields
 var UserSchema = new Schema({
-  username:{type:String ,unique:true},
   email:{type:String ,unique:true,lowercase:true},
   password: String,
   name:String,
   picture:{type:String,default:''},
   rollno:{type:String ,default:''},
-  year:{type:String,default:''},
+  year:{type:Number,default:0},
   scholar:{type:String,default:''},
   eventsRecord:[{
     eventName:{type:String, default:""},

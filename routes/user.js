@@ -49,16 +49,10 @@ router.post('/signup', function(req, res, next) {
   user.email = req.body.email;
   user.password = req.body.password;
   var confirmPassword = req.body.passwordrepeat;
-  user.username = req.body.username;
 
   if(user.name == '' || user.name == 'undefined')
   {
     req.flash('errors', 'Name is required for signup');
-    return res.redirect('/signup');
-  }
-  if(user.username == '' || user.username == 'undefined')
-  {
-    req.flash('errors', 'Username is required for signup');
     return res.redirect('/signup');
   }
   if(user.email == '' || user.email == 'undefined')
@@ -105,16 +99,16 @@ router.post('/signup', function(req, res, next) {
   });
 });
 
-router.get('/logout',function(req,res,next){
+router.get('/logout',passportConfig.isAuthenticated,function(req,res,next){
   req.logout();
   res.redirect('/');
 });
 
-router.get('/edit-profile',function(req,res,next){
+router.get('/edit-profile', passportConfig.isAuthenticated,function(req,res,next){
   res.render('accounts/edit-profile',{message : req.flash('success')});
 });
 
-router.post('/edit-profile',function(req,res,next){
+router.post('/edit-profile', passportConfig.isAuthenticated,function(req,res,next){
   User.findOne({_id:req.user._id},function(err,user){
     if(err) return next(err);
 
@@ -133,11 +127,11 @@ router.post('/edit-profile',function(req,res,next){
 });
 
 
-router.get('/change-password',function(req,res,next){
+router.get('/change-password', passportConfig.isAuthenticated,function(req,res,next){
   res.render('accounts/change-password',{message : req.flash('success')});
 });
 
-router.post('/change-password',function(req,res,next){
+router.post('/change-password', passportConfig.isAuthenticated,function(req,res,next){
   User.findOne({_id:req.user._id},function(err,user){
     if(err) return next(err);
 

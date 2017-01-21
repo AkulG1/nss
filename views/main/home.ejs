@@ -33,7 +33,7 @@
                   </div>
 
                   <div class="col s12 center">
-                    <a class="waves-effect waves-light btn center" href="">Visit Website</a>
+                    <a class="waves-effect waves-light btn center" href="http://nss.nic.in/">Visit Website</a>
                   </div>
               </div>
           </div>
@@ -54,7 +54,7 @@
                       Delhi College of Engineering has been the mother institution of a number of national projects including IITD, SPA, College of Arts and even the famous FMS. Initially affiliated to the University of Delhi, from July 2009, the DCE has become Delhi Technological University vide Delhi act 6 of 2009. As Delhi Technological University, it has the desired autonomy to excel and shape itself as a world class Technological University.</p>
                   </div>
                   <div class="col s12 center">
-                    <a class="waves-effect waves-light btn center" href="">Visit Website</a>
+                    <a class="waves-effect waves-light btn center" href="http://dtu.ac.in/">Visit Website</a>
                   </div>
               </div>
           </div>
@@ -86,7 +86,12 @@
               <div class="row recent">
                 <ul class="collection">
                   <% for (var i = 0;i< recentNews.length;i++) { %>
-                  <li class="collection-item"><%= recentNews[i].content %></li>
+                  <li class="collection-item">
+                    <h5><%= recentNews[i].heading %></h5>
+                    <h6><%= recentNews[i].date %></h6>
+                    <%= recentNews[i].content %>
+                    <h6><a href="<%= recentNews[i].link %>"><%= recentNews[i].link %></a></h6>
+                  </li>
                   <% } %>
                 </ul>
               </div>

@@ -23,7 +23,6 @@
               <br />
               <p>Name: <%= user.name %></p>
               <p>Email: <%= user.email %></p>
-              <p>Username: <%= user.username %></p>
 
               <% if (user.rollno === "" || typeof user.rollno === 'undefined')  { %>
                 <p>Roll no: <span style="color: #c0392b; font-weight: bold">You have not specified roll no yet</span></p>
@@ -34,7 +33,7 @@
 
               <% } %>
 
-              <% if (user.year === "" || typeof user.year === 'undefined')  { %>
+              <% if (user.year === 0 || typeof user.year === 'undefined')  { %>
                 <p>Year: <span style="color: #c0392b; font-weight: bold">You have not specified year yet</span></p>
 
               <% } else { %>
