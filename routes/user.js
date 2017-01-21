@@ -36,68 +36,68 @@ router.get('/profile', passportConfig.isAuthenticated, function(req, res, next) 
 });
 
 
-router.get('/signup', function(req, res, next) {
-  res.render('accounts/signup', {
-    errors: req.flash('errors')
-  });
-});
+// router.get('/signup', function(req, res, next) {
+//   res.render('accounts/signup', {
+//     errors: req.flash('errors')
+//   });
+// });
 
-router.post('/signup', function(req, res, next) {
-  var user = new User();
+// router.post('/signup', function(req, res, next) {
+//   var user = new User();
 
-  user.name = req.body.name;
-  user.email = req.body.email;
-  user.password = req.body.password;
-  var confirmPassword = req.body.passwordrepeat;
+//   user.name = req.body.name;
+//   user.email = req.body.email;
+//   user.password = req.body.password;
+//   var confirmPassword = req.body.passwordrepeat;
 
-  if(user.name == '' || user.name == 'undefined')
-  {
-    req.flash('errors', 'Name is required for signup');
-    return res.redirect('/signup');
-  }
-  if(user.email == '' || user.email == 'undefined')
-  {
-    req.flash('errors', 'Email is required for signup');
-    return res.redirect('/signup');
-  }
-  if(user.password == '' || user.password == 'undefined')
-  {
-    req.flash('errors', 'Password is required for signup');
-    return res.redirect('/signup');
-  }
-  if(confirmPassword == '' || confirmPassword == 'undefined')
-  {
-    req.flash('errors', 'Confirm Password is required for signup');
-    return res.redirect('/signup');
-  }
+//   if(user.name == '' || user.name == 'undefined')
+//   {
+//     req.flash('errors', 'Name is required for signup');
+//     return res.redirect('/signup');
+//   }
+//   if(user.email == '' || user.email == 'undefined')
+//   {
+//     req.flash('errors', 'Email is required for signup');
+//     return res.redirect('/signup');
+//   }
+//   if(user.password == '' || user.password == 'undefined')
+//   {
+//     req.flash('errors', 'Password is required for signup');
+//     return res.redirect('/signup');
+//   }
+//   if(confirmPassword == '' || confirmPassword == 'undefined')
+//   {
+//     req.flash('errors', 'Confirm Password is required for signup');
+//     return res.redirect('/signup');
+//   }
 
-  if(confirmPassword != user.password)
-  {
-    req.flash('errors', 'Passwords do not match');
-    return res.redirect('/signup');
-  }
-  user.year = req.body.year;
-  user.scholar = req.body.scholar;
-  user.rollno = req.body.rollno;
-  user.picture = user.gravatar();
+//   if(confirmPassword != user.password)
+//   {
+//     req.flash('errors', 'Passwords do not match');
+//     return res.redirect('/signup');
+//   }
+//   user.year = req.body.year;
+//   user.scholar = req.body.scholar;
+//   user.rollno = req.body.rollno;
+//   user.picture = user.gravatar();
 
-  User.findOne({ email: req.body.email }, function(err, existingUser) {
-    if (existingUser) {
-      req.flash('errors', 'Account with that email address already exists');
-      return res.redirect('/signup');
-    } else {
-      user.save(function(err, user) {
-        if (err) return next(err);
+//   User.findOne({ email: req.body.email }, function(err, existingUser) {
+//     if (existingUser) {
+//       req.flash('errors', 'Account with that email address already exists');
+//       return res.redirect('/signup');
+//     } else {
+//       user.save(function(err, user) {
+//         if (err) return next(err);
 
-        req.logIn(user, function(err) {
-          if (err) return next(err);
-          res.redirect('/profile');
+//         req.logIn(user, function(err) {
+//           if (err) return next(err);
+//           res.redirect('/profile');
 
-        })
-      });
-    }
-  });
-});
+//         })
+//       });
+//     }
+//   });
+// });
 
 router.get('/logout',passportConfig.isAuthenticated,function(req,res,next){
   req.logout();
