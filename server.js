@@ -58,7 +58,11 @@ app.use(function(req,res,next){
 // with the below function category data becomes accessible on all pages
 app.use(function(req,res,next){
   //find all categories
-  eventCategory.find({},function(err,eventCategories){
+
+  eventCategory
+  .find({})
+  .sort({ priority: -1 })
+  .exec(function(err,eventCategories){
     if(err) return next(err);
     res.locals.eventCategories = eventCategories;
     next();

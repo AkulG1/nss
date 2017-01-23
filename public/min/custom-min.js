@@ -3,7 +3,9 @@
         $('.collapsible').collapsible();
         $('.scrollspy').scrollSpy();
         $('select').material_select();
-    
+        $('.materialboxed').materialbox();
+        $('.slider').slider();
+
         var animationDelay = 2500,
             barAnimationDelay = 3800,
             barWaiting = barAnimationDelay - 3000,

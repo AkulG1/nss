@@ -9,17 +9,19 @@
             </div>
 
             <% for(var i = 0; i< gallery.length;i++) {%>
-            <div class="col s12 m6 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="/img/gallery/<%= gallery[i].image %>">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= gallery[i].name %></span>
-                    </div>
 
-                </div>
+            <div class="col s12 m6 l4 center">
+                  <img class="materialboxed" width="400"  height="250" data-caption="<%= gallery[i].name %>" src="/img/gallery/<%= gallery[i].image %>">
             </div>
+
+            <div class="col s12 m6 l4 center">
+                  <img class="materialboxed" width="400"  height="250" data-caption="<%= gallery[i].name %>" src="/img/gallery/<%= gallery[i].image %>">
+            </div>
+
+            <div class="col s12 m6 l4 center">
+                  <img class="materialboxed" width="400"  height="250" data-caption="<%= gallery[i].name %>" src="/img/gallery/<%= gallery[i].image %>">
+            </div>
+
             <% } %>
 
         </div>

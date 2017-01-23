@@ -121,7 +121,11 @@ router.get('/',function(req,res,next){
   // }else{
   //   res.render('main/home');
   // }
-  RecentNews.find({}, function(err, recentNews) {
+
+  RecentNews
+  .find({})
+  .sort({ priority: -1 })
+  .exec(function(err, recentNews) {
     if (err) return next(err);
     res.render('main/home', {
       recentNews : recentNews
@@ -145,7 +149,10 @@ router.get('/contact',function(req,res){
 });
 
 router.get('/gallery',function(req,res){
-  Gallery.find({},function(err,gallery){
+  Gallery
+  .find({})
+  .sort({ priority: -1 })
+  .exec(function(err,gallery){
     if(err) return next(err);
     res.render('main/gallery',{ gallery : gallery });
   });
@@ -165,6 +172,7 @@ router.get('/events/:id', function(req, res, next) {
   Events
     .find({ eventCategory: req.params.id })
     .populate('eventCategory') // there may be error here
+    .sort({ priority: -1 })
     .exec(function(err, events) {
       if (err) return next(err);
       res.render('main/events', {
@@ -220,75 +228,12 @@ router.post('/contact', function(req, res, next) {
     }
 
     req.flash('errors', 'Message Sent Successfully. We will contact you shortly.')
-    return res.redirect('/contact');
-    // console.log(response.statusCode)
-    // console.log(response.body)
-    // console.log(response.headers)
+
   });
 
 });
 
 
-
-//
-//
-// router.get('/product/:id', function(req, res, next) {
-//   Product.findById({ _id: req.params.id }, function(err, product) {
-//     if (err) return next(err);
-//     res.render('main/product', {
-//       product: product
-//     });
-//   });
-// });
-//
-// router.post('/payment', function(req, res, next) {
-//
-//   var stripeToken = req.body.stripeToken;
-//   var currentCharges = Math.round(req.body.stripeMoney * 100);
-//   stripe.customers.create({
-//     source: stripeToken,
-//   }).then(function(customer) {
-//     return stripe.charges.create({
-//       amount: currentCharges,
-//       currency: 'usd',
-//       customer: customer.id
-//     });
-//   }).then(function(charge) {
-//     async.waterfall([
-//       function(callback) {
-//         Cart.findOne({ owner: req.user._id }, function(err, cart) {
-//           callback(err, cart);
-//         });
-//       },
-//       function(cart, callback) {
-//         User.findOne({ _id: req.user._id }, function(err, user) {
-//           if (user) {
-//             for (var i = 0; i < cart.items.length; i++) {
-//               user.history.push({
-//                 item: cart.items[i].item,
-//                 paid: cart.items[i].price
-//               });
-//             }
-//
-//             user.save(function(err, user) {
-//               if (err) return next(err);
-//               callback(err, user);
-//             });
-//           }
-//         });
-//       },
-//       function(user) {
-//         Cart.update({ owner: user._id }, { $set: { items: [], total: 0 }}, function(err, updated) {
-//           if (updated) {
-//             res.redirect('/profile');
-//           }
-//         });
-//       }
-//     ]);
-//   });
-//
-//
-// });
 
 
 module.exports = router;
