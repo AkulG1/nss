@@ -4,7 +4,6 @@ var Config = require('../config/secret');
 var Events = require('../models/event');
 var RecentNews = require('../models/recentNews');
 var Gallery = require('../models/gallery');
-//var Cart = require('../models/cart');
 var stripe = require('stripe')('sk_test_JvxDXJ0cUTuzyqL2jonZ5xNK');
 var async = require('async');
 
@@ -158,9 +157,6 @@ router.get('/gallery',function(req,res){
   });
 });
 
-// router.get('/events',function(req,res){
-//   res.render('main/events');
-// });
 
 router.get('/volunteer',function(req,res){
   res.render('main/volunteer');
@@ -227,7 +223,8 @@ router.post('/contact', function(req, res, next) {
       return res.redirect('/contact');
     }
 
-    req.flash('errors', 'Message Sent Successfully. We will contact you shortly.')
+    req.flash('errors', 'Message Sent Successfully. We will contact you shortly.');
+    return res.redirect('/contact');
 
   });
 
