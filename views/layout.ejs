@@ -11,6 +11,13 @@
     <link href="/min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="/min/custom-min.css" type="text/css" rel="stylesheet" >
 
+    <!-- bootstrap -->
+
+    <link rel="stylesheet" href="/assets/animate/set.css" />
+    <!-- gallery -->
+    <link rel="stylesheet" href="/assets/gallery/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="/assets/style.css">
+
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -27,6 +34,15 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
+  <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+  </div>
 <!-- Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -66,5 +82,25 @@
     });
     });
     </script>
+
+
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title">Title</h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    </div>
+
+    <!-- wow script -->
+    <script src="/assets/wow/wow.min.js"></script>
+    <!-- gallery -->
+    <script src="/assets/gallery/jquery.blueimp-gallery.min.js"></script>
+
+
     </body>
 </html>

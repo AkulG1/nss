@@ -2,8 +2,26 @@
 <!--Work-->
 <div class="section scrollspy" id="work">
     <div class="container">
+      <!-- works -->
+      <h3 class="center header text_h2"><span class="span_h2"> Gallery</span></h3>
+      <div class="row">
+      <div id="works" class="grid">
+          <% for(var i = 0; i< gallery.length;i++) {%>
+            <a href="/img/gallery/<%= gallery[i].image %>" title="<%= gallery[i].name %>" data-gallery><figure class="effect-oscar  wowload fadeInUp">
+               <img src="/img/gallery/<%= gallery[i].image %>" alt="img01"/>
+               <figcaption>
+                 <!-- <h3><%= gallery[i].name %></h3> -->
+                 <br><br>
+                 <p>Click to view</p>
+               </figcaption>
+           </figure>
+         </a>
+             <% } %>
+    </div>
+  </div>
+<!-- works -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div  class="col s12">
                 <h3 class="center header text_h2"><span class="span_h2"> Gallery</span></h3>
             </div>
@@ -16,6 +34,6 @@
           </div>
             <% } %>
 
-        </div>
+        </div> -->
     </div>
 </div>
