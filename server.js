@@ -53,8 +53,6 @@ app.use(function(req,res,next){
   next();
 });
 
-//app.use(cartLength);
-
 // with the below function category data becomes accessible on all pages
 app.use(function(req,res,next){
   //find all categories
