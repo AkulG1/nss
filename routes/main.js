@@ -163,6 +163,11 @@ router.get('/volunteer',function(req,res){
 });
 
 
+router.get('/members',function(req,res){
+  res.render('main/members');
+});
+
+
 // // '/:id' is used to specify that this id can vary in request . The function below is creating dynamic links
 router.get('/events/:id', function(req, res, next) {
   Events

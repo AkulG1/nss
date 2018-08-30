@@ -23,7 +23,11 @@
                     <% if(!user) { %>
                       <!-- <li><a href="/signup">Sign up</a></li> -->
                       <li><a href="/login">Login</a></li>
+                      <li><a href="/members">Members</a></li>
+
+         
                       <% }else { %>
+                        <li><a href="/members">Members</a></li>
                         <li><a href="/profile">Profile</a></li>
                         <li><a href="/logout">Logout</a></li>
                       <% } %>
@@ -50,7 +54,7 @@
                   <li><a href="/gallery">Gallery</a></li>
                   <li><a href="/contact">Contact</a></li>
                   <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
+                    <ul classs="collapsible collapsible-accordion">
                       <li>
                         <a class="collapsible-header">Volunteer<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
                         <div class="collapsible-body">
@@ -58,7 +62,9 @@
                             <% if(!user) { %>
                               <!-- <li><a href="/signup">Sign up</a></li> -->
                               <li><a href="/login">Login</a></li>
+                              <li><a href="/members">Members</a></li>
                               <% }else { %>
+                             <li><a href="/members">Members</a></li>
                                 <li><a href="/profile">Profile</a></li>
                                 <li><a href="/logout">Logout</a></li>
                               <% } %>
