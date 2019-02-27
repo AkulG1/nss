@@ -66,6 +66,8 @@ var async = require('async');
 //     });
 // });
 //
+
+
 router.get('/event/:id', function(req, res, next) {
   Events.findById({ _id: req.params.id }, function(err, foundEvent) {
     if (err) return next(err);

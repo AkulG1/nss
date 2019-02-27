@@ -20,6 +20,7 @@
                   <!-- <li><a href="/volunteer">Login</a></li> -->
                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Volunteer<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
                   <ul id='dropdown1' class='dropdown-content'>
+                   
                     <% if(!user) { %>
                       <!-- <li><a href="/signup">Sign up</a></li> -->
                       <li><a href="/login">Login</a></li>
@@ -31,22 +32,30 @@
                         <li><a href="/profile">Profile</a></li>
                         <li><a href="/logout">Logout</a></li>
                       <% } %>
+
                   </ul>
                 </ul>
 
-                <ul id="slide-out" class="side-nav">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About Us</a></li>
-                  <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                      <li>
-                        <a class="collapsible-header">Events<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
-                        <div class="collapsible-body">
-                          <ul>
-                            <% for(var i=0 ; i< eventCategories.length; i++) { %>
-                              <li><a href="/events/<%= eventCategories[i]._id %>"><%= eventCategories[i].name %></a></li>
-                            <% } %>
-                          </ul>
+               
+
+                   <ul id="dropdown3" class="dropdown-content active" style="width: 122px; left: 779.453px; position: absolute; top: 0px; opacity: 1; display: block;">
+                    
+                      <li><a href="/events/58f4b38a734d1d3b89bb0648">Upcoming</a></li>
+                    
+                      <li><a href="https://luckykumardev.github.io/nss/">Regular</a></li>
+                    
+                      <li><a href="/events/587a52f5734d1d50c51427e2">Recent</a></li>
+                    
+                      <li><a href="/events/587a538c734d1d50c51427ec">Camp</a></li>
+                    
+                      <li><a href="/events/587a5369734d1d50c51427e8">Past</a></li>
+                    
+                  </ul>
+
+
+
+
+
                         </div>
                       </li>
                     </ul>

@@ -3,15 +3,14 @@
 <div class="container">
   <div class="row">
     <div class="col l9 m12 s12">
-
       <div id="intro" class="section scrollspy">
           <div class="container">
               <div class="row card-panel">
-                  <% if(events) { %>
                   <div  class="col s12">
-                      <h3 class="center header text_h2"><span class="span_h2"><%= events[0].eventCategory.name %> Events</span></h3>
+
+                      <h3 class="center header text_h2"><span class="span_h2">Regular Events</span></h3>
                   </div>
-                  <% } %>
+
               </div>
 
                   <% for(var i=0; i < events.length; i++) { %>
@@ -29,15 +28,12 @@
                   </div>
                 </div>
                   <% } %>
-
           </div>
       </div>
-
 
     </div>
     <div class="col l3 m12 s12">
       <%include ../partials/sidebar %>
     </div>
-
   </div>
 </div>
