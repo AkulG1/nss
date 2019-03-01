@@ -3,95 +3,93 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo"><img src="/img/logo.jpg"></img></a>
+            <a href="http://www.nssdtu.in/#" id="logo-container" class="brand-logo"><img src="./NSS DTU_files/logo.jpg"></a>
 
-                <ul  class="show_active right hide-on-med-and-down">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About Us</a></li>
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Events<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
-                  <ul id='dropdown3' class='dropdown-content'>
-                    <% for(var i=0 ; i < eventCategories.length; i++) { %>
-                      <li><a href="/events/<%= eventCategories[i]._id %>"><%= eventCategories[i].name %></a></li>
-                    <% } %>
-                  </ul>
-
-                  <li><a href="/gallery">Gallery</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                  <!-- <li><a href="/volunteer">Login</a></li> -->
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Volunteer<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
-                  <ul id='dropdown1' class='dropdown-content'>
-                   
-                    <% if(!user) { %>
-                      <!-- <li><a href="/signup">Sign up</a></li> -->
-                      <li><a href="/login">Login</a></li>
-                      <li><a href="/members">Members</a></li>
-
-         
-                      <% }else { %>
-                        <li><a href="/members">Members</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                        <li><a href="/logout">Logout</a></li>
-                      <% } %>
-
-                  </ul>
-                </ul>
-
-               
-
-                   <ul id="dropdown3" class="dropdown-content active" style="width: 122px; left: 779.453px; position: absolute; top: 0px; opacity: 1; display: block;">
+                <ul class="show_active right hide-on-med-and-down">
+                  <li><a href="http://www.nssdtu.in/">Home</a></li>
+                  <li><a href="http://www.nssdtu.in/about">About Us</a></li>
+                  <li><a class="dropdown-button" href="http://www.nssdtu.in/#!" data-activates="dropdown3">Events<i class="mdl-material-icons fa fa-caret-down right"></i></a><ul id="dropdown3" class="dropdown-content active" style="width: 122px; left: 479.891px; position: absolute; top: 0px; opacity: 1; display: block;">
                     
-                      <li><a href="/events/58f4b38a734d1d3b89bb0648">Upcoming</a></li>
+                      <li><a href="http://www.nssdtu.in/events/58f4b38a734d1d3b89bb0648">Upcoming</a></li>
                     
                       <li><a href="https://luckykumardev.github.io/nss/">Regular</a></li>
                     
-                      <li><a href="/events/587a52f5734d1d50c51427e2">Recent</a></li>
+                      <li><a href="http://www.nssdtu.in/events/587a52f5734d1d50c51427e2">Recent</a></li>
                     
-                      <li><a href="/events/587a538c734d1d50c51427ec">Camp</a></li>
+                      <li><a href="http://www.nssdtu.in/events/587a538c734d1d50c51427ec">Camp</a></li>
                     
-                      <li><a href="/events/587a5369734d1d50c51427e8">Past</a></li>
+                      <li><a href="http://www.nssdtu.in/events/587a5369734d1d50c51427e8">Past</a></li>
                     
-                  </ul>
+                  </ul></li>
+                  
 
+                  <li><a href="http://www.nssdtu.in/gallery">Gallery</a></li>
+                  <li><a href="http://www.nssdtu.in/contact">Contact</a></li>
+                  <!-- <li><a href="/volunteer">Login</a></li> -->
+                  <li><a class="dropdown-button" href="http://www.nssdtu.in/#!" data-activates="dropdown1">Volunteer<i class="mdl-material-icons fa fa-caret-down right"></i></a><ul id="dropdown1" class="dropdown-content">
+                    
+                      <!-- <li><a href="/signup">Sign up</a></li> -->
+                      <li><a href="http://www.nssdtu.in/login">Login</a></li>
+                      <li><a href="http://www.nssdtu.in/members">Members</a></li>
 
+         
+                      
+                  </ul></li>
+                  
+                </ul>
 
-
-
+                <ul id="slide-out" class="side-nav" style="left: -250px;">
+                  <li><a href="http://www.nssdtu.in/">Home</a></li>
+                  <li><a href="http://www.nssdtu.in/about">About Us</a></li>
+                  <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                      <li>
+                        <a class="collapsible-header">Events<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
+                        <div class="collapsible-body" style="">
+                          <ul>
+                            
+                              <li><a href="http://www.nssdtu.in/events/58f4b38a734d1d3b89bb0648">Upcoming</a></li>
+                            
+                              <li><a href="http://www.nssdtu.in/events/587a52c3734d1d50c51427cf">Regular</a></li>
+                            
+                              <li><a href="http://www.nssdtu.in/events/587a52f5734d1d50c51427e2">Recent</a></li>
+                            
+                              <li><a href="http://www.nssdtu.in/events/587a538c734d1d50c51427ec">Camp</a></li>
+                            
+                              <li><a href="http://www.nssdtu.in/events/587a5369734d1d50c51427e8">Past</a></li>
+                            
+                          </ul>
                         </div>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="/gallery">Gallery</a></li>
-                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="http://www.nssdtu.in/gallery">Gallery</a></li>
+                  <li><a href="http://www.nssdtu.in/contact">Contact</a></li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                       <li>
                         <a class="collapsible-header">Volunteer<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
-                        <div class="collapsible-body">
+                        <div class="collapsible-body" style="">
                           <ul>
-                            <% if(!user) { %>
+                            
                               <!-- <li><a href="/signup">Sign up</a></li> -->
-                              <li><a href="/login">Login</a></li>
-                              <li><a href="/members">Members</a></li>
-                              <% }else { %>
-                               <li><a href="/members">Members</a></li>
-                               <li><a href="/profile">Profile</a></li>
-                              <li><a href="/logout">Logout</a></li>
-                              <% } %>
+                              <li><a href="http://www.nssdtu.in/login">Login</a></li>
+                              <li><a href="http://www.nssdtu.in/members">Members</a></li>
+                              
                           </ul>
                         </div>
                       </li>
                     </ul>
                   </li>
 
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                        </ul></div>
+                      
+                    
+                  
 
-                </ul>
+                
 
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <a href="http://www.nssdtu.in/#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
-        </div>
-    </nav>
+        </nav>
 </div>
