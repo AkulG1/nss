@@ -2,6 +2,7 @@ var router = require('express').Router();
 var User = require('../models/user');
 var Config = require('../config/secret');
 var Events = require('../models/event');
+let EventCategory = require('../models/eventCategory');
 var RecentNews = require('../models/recentNews');
 var Gallery = require('../models/gallery');
 var stripe = require('stripe')('sk_test_JvxDXJ0cUTuzyqL2jonZ5xNK');
@@ -72,7 +73,8 @@ router.get('/event/:id', function(req, res, next) {
   Events.findById({ _id: req.params.id }, function(err, foundEvent) {
     if (err) return next(err);
     res.render('main/event', {
-      foundEvent : foundEvent
+       foundEvent : foundEvent
+      //console.log(foundEvent + " babluuuuuu");
     });
   });
 });
@@ -170,22 +172,129 @@ router.get('/members',function(req,res){
 });
 
 
-// // '/:id' is used to specify that this id can vary in request . The function below is creating dynamic links
-router.get('/events/:id', function(req, res, next) {
+
+
+
+router.post("/event", function(req, res){
+       var eventCategory        = req.body.eventCategory;
+       var name                 = req.body.name;
+       var priority             = req.body.priority;
+       let para                 = req.body.para;
+       let impact               = req.body.impact;
+       let image1               = req.body.image1;
+       let image2               = req.body.image2;
+       
+       var newEvent    = {
+                         eventCategory    : eventCategory,  
+                         name             : name,
+                         priority         : priority,
+                         paragraph        : para,
+                         impact           : impact,
+                         image1           : image1,
+                         image2           : image2
+                  }      
+   Events.create(newEvent, function(err, newlyCreated){            
+            if(err){
+              console.log(err);
+            } else {
+              console.log("success");
+            }
+    });    
+  });
+
+
+router.post("/eventsCategory", function(req, res){
+       var name        = req.body.name;
+       var priority    = req.body.priority;
+       var newEvent    = {
+                         
+                         name        : name,
+                         priority    : priority,
+                                           }      
+   EventCategory.create(newEvent, function(err, newlyCreated){            
+            if(err){
+              console.log(err+ "pintu");
+            } else {
+              console.log("babluu");
+            }
+    });    
+  });
+
+
+
+
+
+router.get('/events/recent', function(req, res, next) {
   Events
-    .find({ eventCategory: req.params.id })
-    .populate('eventCategory') // there may be error here
-    .sort({ priority: -1 })
-    .exec(function(err, events) {
-      if (err) return next(err);
-      res.render('main/events', {
-        events : events
-      });
-    });
+  .find({}, function(err, events){
+    if(err){
+      console.log(err);  
+    } else {
+       res.render("main/recent", {events:events});
+      }
+
+});
 });
 
-router.post('/contact', function(req, res, next) {
 
+
+router.get('/events/upcoming', function(req, res, next) {
+  Events
+  .find({}, function(err, events){
+    if(err){
+      console.log(err);  
+    } else {
+       res.render("main/upcoming", {events:events});
+      }
+
+});
+});
+
+
+
+router.get('/events/regular', function(req, res, next) {
+  Events
+  .find({}, function(err, events){
+    if(err){
+      console.log(err);  
+    } else {
+       res.render("main/regular", {events:events});
+      }
+
+});
+});
+
+
+
+router.get('/events/camp', function(req, res, next) {
+  Events
+  .find({}, function(err, events){
+    if(err){
+      console.log(err);  
+    } else {
+       res.render("main/camp", {events:events});
+      }
+
+});
+});
+
+
+
+router.get('/events/past', function(req, res, next) {
+  Events
+  .find({}, function(err, events){
+    if(err){
+      console.log(err);  
+    } else {
+       res.render("main/past", {events:events});
+      }
+
+});
+});
+
+
+
+router.post('/contact', function(req, res, next) {
   if(req.body.name == '' || req.body.name == 'undefined')
   {
     req.flash('errors', 'Name is required for sending message');
@@ -234,10 +343,6 @@ router.post('/contact', function(req, res, next) {
     return res.redirect('/contact');
 
   });
-
 });
-
-
-
 
 module.exports = router;

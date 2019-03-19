@@ -8,21 +8,24 @@
                       <h3 class="center header text_h2"><span class="span_h2"> <%= foundEvent.name %></span></h3>
                   </div>
                 </div>
-                <% if(foundEvent.images) {%>
-                <div class="row">
-                  <% for(var i=0; i < foundEvent.images.length;i++) {%>
-                  <div class="col l3 m3 6">
-                    <img class="responsive-img" src="/img/events/<%= foundEvent.images[i].image %>">
-                  </div>
-                  <% } %>
-                </div>
-                <% } %>
+                
                 <div class="row">
                   <div class="col l12 m12 s12 center">
-                    <% for(var i=0; i < foundEvent.content.length;i++) {%>
-                      <p class="left-align light"><%= foundEvent.content[i].paragraph %></p>
-                    <% } %>
+                    <h3>Introduction</h3>  
+                    <p class="left-align light"><%= foundEvent.paragraph %></p>
                   </div>
+                  <div class="col l12 m12 s12 center">
+                    <h3>Impact</h3>  
+                    <p class="left-align light"><%= foundEvent.impact %></p>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col l3 m3 6">
+                  <img class="responsive-img" src="/img/events/<%= foundEvent.image1 %>">
+                </div>
+                <div class="col l3 m3 6">
+                  <img class="responsive-img" src="/img/events/<%= foundEvent.image2 %>">
+                </div>
               </div>
 
               <div class="row">

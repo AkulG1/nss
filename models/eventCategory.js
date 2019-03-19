@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var eventCategorySchema = new Schema({
-  name:{type:String,unique:true},
+ // name:{type:String},
+  name:String,
   priority:Number
 });
 

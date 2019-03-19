@@ -30,6 +30,7 @@
     "mongoosastic": "^3.6.1",
     "mongoose": "^4.7.6",
     "morgan": "^1.7.0",
+    "nodemon": "^1.18.10",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "sendgrid": "^4.7.1",

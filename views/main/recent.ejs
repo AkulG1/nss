@@ -1,0 +1,43 @@
+<% layout('layout') -%>
+<!--Intro and service-->
+<div class="container">
+  <div class="row">
+    <div class="col l9 m12 s12">
+      <div id="intro" class="section scrollspy">
+          <div class="container">
+              <div class="row card-panel">
+                  <div  class="col s12">
+
+                      <h3 class="center header text_h2"><span class="span_h2">Recent events</span></h3>
+                  </div>
+
+          </div>
+
+
+          
+          <% for(var i=0; i < events.length; i++) { %>
+            <% if(events[i].eventCategory === "Recent")  { %>
+            <div class="row card-panel">
+            <div class="col s12 left">
+              <h4 class="header"><%= events[i].name %></h4>
+              <!-- <p id="<%=events[i]._id %>" class="light"><%= events[i].paragraph%></p> -->
+              <a class="waves-effect waves-light btn center" href="/event/<%= events[i]._id %>">Read More</a>
+              <!-- <script>
+                var content = "<%=events[i].content%>";
+                //var finalContent = content.substr(0,100);
+                var finalContent = content.split('.')[0] + '.';
+                document.getElementById('<%= events[i]._id%>').innerHTML = finalContent;
+              </script> -->
+            </div>
+          </div>
+          
+              <% } %>
+            <% } %>
+      </div>
+</div>
+    </div>
+    <div class="col l3 m12 s12">
+      <%include ../partials/sidebar %>
+    </div>
+</div>
+</div>

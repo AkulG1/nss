@@ -3,14 +3,16 @@ var mongoosastic = require('mongoosastic');
 var Schema = mongoose.Schema;
 
 var EventSchema = new Schema({
-  eventCategory: {type:Schema.Types.ObjectId,ref:'eventCategory'},
+  //eventCategory: {type:Schema.Types.ObjectId,ref:'eventCategory'},
+  // content:[{
+  //   paragraph:{type:String, default:""},
+  // }],
+  eventCategory: String,
   name:String,
-  content:[{
-    paragraph:{type:String, default:""},
-  }],
-  images:[{
-    image:{type:String, default:""},
-  }],
+  paragraph:String,
+  impact: String,
+  image1:String,
+  image2:String,
   priority:Number
 });
 //
