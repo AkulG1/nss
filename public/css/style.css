@@ -5,6 +5,42 @@
  * Thanks for MaterializeCSS.com
  */
 
+
+.kk{
+    color: #EF9A9A !important;
+}
+
+ .newsletter {
+    padding:3px;
+    width:700px;
+    overflow:hidden;
+  }
+  .pdf{
+    float-right: 100px;
+  }
+  .marquee{
+    display:block;
+  position:relative;
+  width:1000px;
+  height:80px;
+  animation:scroll 15s linear infinite;
+  padding:3px;
+  }
+  
+  .marquee:hover {
+      animation-play-state: paused
+  }
+  
+  
+  /* Make it move */
+  @keyframes scroll{
+  0% {left:800px;}
+  100% {left:-800px;}
+  }
+
+
+
+
 .default_color{background-color: #2196F3 !important}
 
 .default_color_text{color: #2196F3 !important}
