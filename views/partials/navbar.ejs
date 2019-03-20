@@ -45,9 +45,11 @@
                         <a class="collapsible-header">Events<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
                         <div class="collapsible-body">
                           <ul>
-                            <% for(var i=0 ; i< eventCategories.length; i++) { %>
-                              <li><a href="/events/<%= eventCategories[i]._id %>"><%= eventCategories[i].name %></a></li>
-                            <% } %>
+                            <li><a href="/events/regular">Regular</a></li>
+                            <li><a href="/events/upcoming">Upcoming</a></li>
+                            <li><a href="/events/recent">Recent</a></li>
+                            <li><a href="/events/camp">Camp</a></li>
+                            <li><a href="/events/past">Past</a></li>
                           </ul>
                         </div>
                       </li>
