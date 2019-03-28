@@ -1,92 +1,94 @@
 <!-- Navigation-->
- <div class="navbar-fixed">
-    <nav id="nav_f" class="default_color" role="navigation">
-        <div class="container">
-            <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo"><img src="/img/logo.jpg"></img></a>
+<div class="navbar-fixed">
+  <nav id="nav_f" class="default_color" role="navigation">
+      <div class="container">
+          <div class="nav-wrapper">
+          <a href="#" id="logo-container" class="brand-logo"><img src="/img/logo.jpg"></img></a>
 
-                <ul  class="show_active right hide-on-med-and-down">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About Us</a></li>
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Events<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
-                  <ul id='dropdown3' class='dropdown-content'>
-                      <li><a href="/events/regular">Regular</a></li>
-                      <li><a href="/events/upcoming">Upcoming</a></li>
-                      <li><a href="/events/recent">Recent</a></li>
-                      <li><a href="/events/camp">Camp</a></li>
-                      <li><a href="/events/past">Past</a></li>
-                  </ul>
+              <ul  class="show_active right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="https://nifty-kilby-048bf6.netlify.com/">Conclave </a></li>
 
-                  <li><a href="/gallery">Gallery</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                  <!-- <li><a href="/volunteer">Login</a></li> -->
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Volunteer<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
-                  <ul id='dropdown1' class='dropdown-content'>
-                    <% if(!user) { %>
-                      <!-- <li><a href="/signup">Sign up</a></li> -->
-                      <li><a href="/login">Login</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Events<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
+                <ul id='dropdown3' class='dropdown-content'>
+                    <li><a href="/events/regular">Regular</a></li>
+                    <li><a href="/events/upcoming">Upcoming</a></li>
+                    <li><a href="/events/recent">Recent</a></li>
+                    <li><a href="/events/camp">Camp</a></li>
+                    <li><a href="/events/past">Past</a></li>
+                </ul>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <!-- <li><a href="/volunteer">Login</a></li> -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Volunteer<i class="mdl-material-icons fa fa-caret-down right"></i></a></li>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <% if(!user) { %>
+                    <!-- <li><a href="/signup">Sign up</a></li> -->
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/members">Members</a></li>
+
+       
+                    <% }else { %>
                       <li><a href="/members">Members</a></li>
-
-         
-                      <% }else { %>
-                        <li><a href="/members">Members</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                        <li><a href="/logout">Logout</a></li>
-                      <% } %>
-                  </ul>
+                      <li><a href="/profile">Profile</a></li>
+                      <li><a href="/logout">Logout</a></li>
+                    <% } %>
                 </ul>
+              </ul>
 
-                <ul id="slide-out" class="side-nav">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About Us</a></li>
-                  <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                      <li>
-                        <a class="collapsible-header">Events<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
-                        <div class="collapsible-body">
-                          <ul>
-                            <li><a href="/events/regular">Regular</a></li>
-                            <li><a href="/events/upcoming">Upcoming</a></li>
-                            <li><a href="/events/recent">Recent</a></li>
-                            <li><a href="/events/camp">Camp</a></li>
-                            <li><a href="/events/past">Past</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="/gallery">Gallery</a></li>
-                  <li><a href="/contact">Contact</a></li>
+              <ul id="slide-out" class="side-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="https://nifty-kilby-048bf6.netlify.com/">Conclave </a></li>
                 <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                      <li>
-                        <a class="collapsible-header">Volunteer<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
-                        <div class="collapsible-body">
-                          <ul>
-                            <% if(!user) { %>
-                              <!-- <li><a href="/signup">Sign up</a></li> -->
-                              <li><a href="/login">Login</a></li>
-                              <li><a href="/members">Members</a></li>
-                              <% }else { %>
-                               <li><a href="/members">Members</a></li>
-                               <li><a href="/profile">Profile</a></li>
-                              <li><a href="/logout">Logout</a></li>
-                              <% } %>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                  <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a class="collapsible-header">Events<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a href="/events/regular">Regular</a></li>
+                          <li><a href="/events/upcoming">Upcoming</a></li>
+                          <li><a href="/events/recent">Recent</a></li>
+                          <li><a href="/events/camp">Camp</a></li>
+                          <li><a href="/events/past">Past</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/contact">Contact</a></li>
+              <li class="no-padding">
+                  <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a class="collapsible-header">Volunteer<i class="mdl-material-icons small fa fa-caret-down right"></i></a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <% if(!user) { %>
+                            <!-- <li><a href="/signup">Sign up</a></li> -->
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/members">Members</a></li>
+                            <% }else { %>
+                             <li><a href="/members">Members</a></li>
+                             <li><a href="/profile">Profile</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <% } %>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
 
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
 
-                </ul>
+              </ul>
 
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            </div>
-        </div>
-    </nav>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+          </div>
+      </div>
+  </nav>
 </div>
