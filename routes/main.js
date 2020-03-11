@@ -7,6 +7,9 @@ var RecentNews = require('../models/recentNews');
 var Gallery = require('../models/gallery');
 var stripe = require('stripe')('sk_test_JvxDXJ0cUTuzyqL2jonZ5xNK');
 var async = require('async');
+var passport = require('passport');
+var passportConfig = require('../config/passport');
+
 
 // function paginate(req,res,next){
 //   var perPage = 9;
@@ -137,6 +140,12 @@ router.get('/',function(req,res,next){
   //res.render('main/home');
 });
 
+router.get('/event', passportConfig.isAuthenticated,function(req,res,next){
+  res.render('postContent/event', {
+    errors: req.flash('errors')
+  });
+});
+
 // router.get('/page/:page',function(req,res,next){
 //   paginate(req,res,next);
 // });
@@ -198,6 +207,7 @@ router.post("/event", function(req, res){
               console.log(err);
             } else {
               console.log("success");
+              res.redirect('/');
             }
     });    
   });
