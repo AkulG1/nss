@@ -35,7 +35,6 @@ router.get('/profile', passportConfig.isAuthenticated, function(req, res, next) 
 
 router.post('/signup', function(req, res, next) {
   var user = new User();
-
   user.name = req.body.name;
   user.email = req.body.email;
   user.password = req.body.password;
