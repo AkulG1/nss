@@ -7,8 +7,9 @@
       <div class="row">
       <div id="works" class="grid">
           <% for(var i = 0; i< gallery.length;i++) {%>
-            <a href="/img/gallery/<%= gallery[i].image %>" title="<%= gallery[i].name %>" data-gallery><figure class="effect-oscar  wowload fadeInUp">
-               <img src="/img/gallery/<%= gallery[i].image %>" alt="img01"/>
+            <a href="/img/events/<%= gallery[i] %>" data-gallery><figure class="effect-oscar  wowload fadeInUp">
+              <!-- title="<%= gallery[i] %>"  -->
+              <img src="/img/events/<%= gallery[i] %>" class="gallery__img alt="img01"/>
                <figcaption>
                  <!-- <h3><%= gallery[i].name %></h3> -->
                  <br><br>
@@ -37,3 +38,12 @@
         </div> -->
     </div>
 </div>
+
+<style>
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin:10px;
+}
+</style>

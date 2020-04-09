@@ -161,13 +161,36 @@ router.get('/contact',function(req,res){
 });
 
 router.get('/gallery',function(req,res){
-  Gallery
-  .find({})
-  .sort({ priority: -1 })
-  .exec(function(err,gallery){
-    if(err) return next(err);
-    res.render('main/gallery',{ gallery : gallery });
-  });
+  var path = require('path')
+var fs = require('fs')
+
+function recFindByExt(base,ext,files,result) 
+{
+    files = files || fs.readdirSync('./public/img/events/'+base) 
+    result = result || [] 
+
+    files.forEach( 
+        function (file) {
+            var newbase = path.join(base,file)
+            if ( fs.statSync('./public/img/events/'+newbase).isDirectory() )
+            {
+                result = recFindByExt(newbase,ext,fs.readdirSync('./public/img/events/'+newbase),result)
+            }
+            else
+            {
+                if ( file.substr(-1*(ext.length+1)) == '.' + ext )
+                {
+                    result.push(newbase)
+                } 
+            }
+        }
+    )
+    return result
+}
+
+ext_file_list = recFindByExt('','jpg')
+
+  res.render('main/gallery', { gallery:ext_file_list });
 });
 
 
