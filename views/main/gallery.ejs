@@ -6,12 +6,10 @@
       <h3 class="center header text_h2"><span class="span_h2"> Gallery</span></h3>
       <div class="row">
       <div id="works" class="grid">
-          <% for(var i = 0; i< gallery.length;i++) {%>
-            <a href="/img/events/<%= gallery[i] %>" data-gallery><figure class="effect-oscar  wowload fadeInUp">
-              <!-- title="<%= gallery[i] %>"  -->
-              <img src="/img/events/<%= gallery[i] %>" class="gallery__img alt="img01"/>
+          <% for(var i = 0; i< events.length;i++) {%>
+            <a href="/event/<%= events[i]._id %>"><figure class="effect-oscar  wowload fadeInUp">
+              <img src="/img/events/<%= events[i].image1 %>" class="gallery__img" alt="img01"/>
                <figcaption>
-                 <!-- <h3><%= gallery[i].name %></h3> -->
                  <br><br>
                  <p>Click to view</p>
                </figcaption>
@@ -20,22 +18,7 @@
              <% } %>
     </div>
   </div>
-<!-- works -->
 
-        <!-- <div class="row">
-            <div  class="col s12">
-                <h3 class="center header text_h2"><span class="span_h2"> Gallery</span></h3>
-            </div>
-
-            <% for(var i = 0; i< gallery.length;i++) {%>
-            <div class="container">
-            <div class="col s12 m6 l4 center" style="margin-bottom:15px;">
-                  <img class="materialboxed" width="400"  height="250" data-caption="<%= gallery[i].name %>" src="/img/gallery/<%= gallery[i].image %>">
-            </div>
-          </div>
-            <% } %>
-
-        </div> -->
     </div>
 </div>
 

@@ -34,8 +34,8 @@
 }
 
 #nav_f {
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .51) !important;
+    -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, .51) !important
 }
 
 .text_h {
