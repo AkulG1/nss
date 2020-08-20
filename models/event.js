@@ -8,11 +8,12 @@ var EventSchema = new Schema({
   //   paragraph:{type:String, default:""},
   // }],
   eventCategory: String,
+  department: String,
   name:String,
   paragraph:String,
   impact: String,
-  image1:String,
-  image2:String,
+  image1:{ contentType: String, data: Buffer},
+  image2:{ contentType: String, data: Buffer},
   priority:Number
 });
 //

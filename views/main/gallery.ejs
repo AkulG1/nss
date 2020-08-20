@@ -8,7 +8,8 @@
       <div id="works" class="grid">
           <% for(var i = 0; i< events.length;i++) {%>
             <a href="/event/<%= events[i]._id %>"><figure class="effect-oscar  wowload fadeInUp">
-              <img src="/img/events/<%= events[i].image1 %>" class="gallery__img" alt="img01"/>
+              <img src="data:<%= events[i].image1.contentType %>; base64, <%= events[i].image1.data%>" class="gallery__img" alt="img01"/>
+              <img src="data:<%= events[i].image2.contentType %>; base64, <%= events[i].image2.data%>" class="gallery__img" alt="img01"/>
                <figcaption>
                  <br><br>
                  <p>Click to view</p>

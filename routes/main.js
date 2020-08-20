@@ -9,7 +9,23 @@ var stripe = require('stripe')('sk_test_JvxDXJ0cUTuzyqL2jonZ5xNK');
 var async = require('async');
 var passport = require('passport');
 var passportConfig = require('../config/passport');
+// Newly added
+const multer = require('multer');
+const fs=require('fs');
+const path=require('path');
 
+var storage = multer.diskStorage({
+  destination : function(req, res, cb){
+    cb(null, 'uploads');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+var upload=multer({
+  storage:storage
+});
 
 // function paginate(req,res,next){
 //   var perPage = 9;
@@ -74,10 +90,10 @@ var passportConfig = require('../config/passport');
 
 router.get('/event/:id', function(req, res, next) {
   Events.findById({ _id: req.params.id }, function(err, foundEvent) {
+    // console.log(foundEvent);
     if (err) return next(err);
     res.render('main/event', {
        foundEvent : foundEvent
-      //console.log(foundEvent + " babluuuuuu");
     });
   });
 });
@@ -190,23 +206,26 @@ router.get('/members',function(req,res){
 
 
 
-router.post("/event", function(req, res){
+router.post("/event", upload.array('myImages', 2), function(req, res){
        var eventCategory        = req.body.eventCategory;
        var name                 = req.body.name;
+       var department = req.body.department;
        var priority             = req.body.priority;
        let para                 = req.body.para;
        let impact               = req.body.impact;
-       let image1               = req.body.image1;
-       let image2               = req.body.image2;
-       
+      var img1=fs.readFileSync(req.files[0].path);
+      var img2=fs.readFileSync(req.files[1].path);
+      var enc1=img1.toString('base64');
+      var enc2=img2.toString('base64');
        var newEvent    = {
-                         eventCategory    : eventCategory,  
+                         eventCategory    : eventCategory,
+                         department : department,  
                          name             : name,
                          priority         : priority,
                          paragraph        : para,
                          impact           : impact,
-                         image1           : image1,
-                         image2           : image2
+                        image1 : {contentType: req.files[0].mimetype, data:new Buffer(enc1)},
+                        image2 : {contentType: req.files[1].mimetype, data:new Buffer(enc2)},
                   }      
    Events.create(newEvent, function(err, newlyCreated){            
             if(err){

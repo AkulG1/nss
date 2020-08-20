@@ -3,7 +3,7 @@
 <div id="intro" class="section scrollspy">
   <div class="container">
     <div class="card-panel row">
-      <form class="col s12" method="post">
+      <form class="col s12" method="post" enctype="multipart/form-data">
         <div class="row">
           <div class="col s12">
             <h2 class="center header text_h2"><span class="span_h2"> Add Event</span></h2>
@@ -23,6 +23,20 @@
             <input placeholder="Enter event name here" id="name" name="name" type="text" class="validate">
             <label for="name">Event Name (Required)</label>
           </div>
+
+          <div class="row">
+            <div class="input-field col l6 m12 s12">
+              <select name="department">
+                <option value="Education">Education</option>
+                <option value="Health">Health</option>
+                <option value="GovernmentSchemesImplementation">Government Schemes Implementation</option>
+                <option value="Environment">Environment</option>
+                <option value="RuralCamp">Rural Camp</option>
+                <option value="WomenEmpowerment">Women Empowerment</option>
+                <option value="RoadSafety">Road Safety</option>
+              </select>
+              <label>Department</label>
+            </div>
 
         </div>
         <div class="row">
@@ -56,13 +70,12 @@
 
         <div class="row">
           <div class="input-field col l6 m12 s12">
-            <input placeholder="Enter image1 address" id="image1" name="image1" type="text" class="validate">
-            <label for="image1">Image1 address</label>
+            <input placeholder="Upload max 2 images" name="myImages" type="file" accept="image/*" multiple>
           </div>
-          <div class="input-field col l6 m12 s12">
+          <!-- <div class="input-field col l6 m12 s12">
             <input placeholder="Enter image2 address" id="image2" name="image2" type="text" class="validate">
             <label for="image2">Image2 address</label>
-          </div>
+          </div> -->
         </div>
 
         <div class="row">

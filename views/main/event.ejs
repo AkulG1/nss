@@ -21,13 +21,13 @@
               </div>
               <div class="row">
                 <div class="col l3 m3 s6">
-                  <a href="/img/events/<%= foundEvent.image1 %>">
-                    <img class="responsive-img" src="/img/events/<%= foundEvent.image1 %>">
+                  <!-- <a href="/img/events/<%= foundEvent.image1 %>"> -->
+                    <img class="responsive-img" src="data:<%= foundEvent.image1.contentType %>; base64, <%= foundEvent.image1.data%>">
                   </a>
                 </div>
                 <div class="col l3 m3 s6">
-                  <a href="/img/events/<%= foundEvent.image2 %>">
-                    <img class="responsive-img" src="/img/events/<%= foundEvent.image2 %>">
+                  <!-- <a href="/img/events/<%= foundEvent.image2 %>"> -->
+                    <img class="responsive-img" src="data:<%= foundEvent.image2.contentType %>; base64, <%= foundEvent.image2.data%>">
                   </a>
                 </div>
               </div>
