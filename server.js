@@ -14,7 +14,10 @@ var MongoStore = require('connect-mongo/es5')(session);
 var passport = require('passport');
 
 //importing secret file from config folder
-  var secret = require('./config/secret') || process.env;
+if(require('./config/secret'))
+{
+  var secret = require('./config/secret');
+}
 //importing user file from models folder
 var User = require('./models/user');
 var eventCategory = require('./models/eventCategory');
@@ -23,7 +26,7 @@ var eventCategory = require('./models/eventCategory');
 
 var app = express(); // object of express
 //dbuser:dbpassword
-mongoose.connect(secret.database,function(err){
+mongoose.connect(process.env.database || secret.database,function(err){
   if(err){
     console.log(err);
   }else{
@@ -40,7 +43,7 @@ app.use(cookieParser());
 app.use(session({
   resave:true,
   saveUninitialized:true,
-  secret:secret.secretKey,
+  secret:process.env.secretKey || secret.secretKey,
   store:new MongoStore({url: process.env.database || secret.database,autoReconnect:true})
 }));
 app.use(flash());
@@ -88,5 +91,5 @@ app.use(userRoutes);
 //listen will work fine even without function(err)
 app.listen(secret.PORT,function(err){
   if(err) throw err;
-  console.log("Server is Running on port "+ secret.PORT);
+  console.log("Server is Running on port "+ (process.env.PORT || secret.PORT));
 });
