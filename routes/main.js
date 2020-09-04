@@ -1,6 +1,5 @@
 var router = require('express').Router();
 var User = require('../models/user');
-var Config = require('../config/secret');
 var Events = require('../models/event');
 let EventCategory = require('../models/eventCategory');
 var RecentNews = require('../models/recentNews');
