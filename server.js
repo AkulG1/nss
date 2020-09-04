@@ -14,7 +14,10 @@ var MongoStore = require('connect-mongo/es5')(session);
 var passport = require('passport');
 
 //importing secret file from config folder
-var secret = require('./config/secret');
+if(require('./config/secret'))
+{
+  var secret = require('./config/secret');
+}
 //importing user file from models folder
 var User = require('./models/user');
 var eventCategory = require('./models/eventCategory');
