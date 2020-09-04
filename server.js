@@ -23,7 +23,7 @@ var eventCategory = require('./models/eventCategory');
 
 var app = express(); // object of express
 //dbuser:dbpassword
-mongoose.connect(secret.database,function(err){
+mongoose.connect(process.env.database || secret.database,function(err){
   if(err){
     console.log(err);
   }else{
@@ -40,8 +40,8 @@ app.use(cookieParser());
 app.use(session({
   resave:true,
   saveUninitialized:true,
-  secret:secret.secretKey,
-  store:new MongoStore({url:secret.database,autoReconnect:true})
+  secret:process.env.secretKey || secret.secretKey,
+  store:new MongoStore({url: process.env.database || secret.database,autoReconnect:true})
 }));
 app.use(flash());
 app.use(passport.initialize());
@@ -88,5 +88,5 @@ app.use(userRoutes);
 //listen will work fine even without function(err)
 app.listen(secret.port,function(err){
   if(err) throw err;
-  console.log("Server is Running on port "+secret.port);
+  console.log("Server is Running on port "+ (process.env.PORT || secret.port));
 });
