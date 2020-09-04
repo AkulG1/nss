@@ -14,10 +14,7 @@ var MongoStore = require('connect-mongo/es5')(session);
 var passport = require('passport');
 
 //importing secret file from config folder
-if(require('./config/secret'))
-{
-  var secret = require('./config/secret');
-}
+
 //importing user file from models folder
 var User = require('./models/user');
 var eventCategory = require('./models/eventCategory');
@@ -26,7 +23,7 @@ var eventCategory = require('./models/eventCategory');
 
 var app = express(); // object of express
 //dbuser:dbpassword
-mongoose.connect(process.env.database || secret.database,function(err){
+mongoose.connect(process.env.database,function(err){
   if(err){
     console.log(err);
   }else{
@@ -43,8 +40,8 @@ app.use(cookieParser());
 app.use(session({
   resave:true,
   saveUninitialized:true,
-  secret:process.env.secretKey || secret.secretKey,
-  store:new MongoStore({url: process.env.database || secret.database,autoReconnect:true})
+  secret:process.env.secretKey,
+  store:new MongoStore({url: process.env.database,autoReconnect:true})
 }));
 app.use(flash());
 app.use(passport.initialize());
@@ -89,7 +86,7 @@ app.use(userRoutes);
 //this function is for starting the server
 //3000 is the port no
 //listen will work fine even without function(err)
-app.listen(process.env.PORT || secret.PORT,function(err){
+app.listen(process.env.PORT,function(err){
   if(err) throw err;
-  console.log("Server is Running on port "+ (process.env.PORT || secret.PORT));
+  console.log("Server is Running on port "+ (process.env.PORT));
 });
