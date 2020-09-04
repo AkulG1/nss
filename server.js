@@ -89,7 +89,7 @@ app.use(userRoutes);
 //this function is for starting the server
 //3000 is the port no
 //listen will work fine even without function(err)
-app.listen(secret.PORT,function(err){
+app.listen(process.env.PORT || secret.PORT,function(err){
   if(err) throw err;
   console.log("Server is Running on port "+ (process.env.PORT || secret.PORT));
 });
