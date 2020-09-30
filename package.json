@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saviourninja/NSS-Website-New.git"
+    "url": "https://github.com/AkulG1/NSSDev.git"
   },
   "author": "Akul Gandotra",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saviourninja/NSS-Website-New/issues"
+    "url": "https://github.com/AkulG1/NSSDev/issues"
   },
   "dependencies": {
     "async": "^2.1.4",
